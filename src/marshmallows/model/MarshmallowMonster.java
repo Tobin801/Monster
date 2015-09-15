@@ -85,7 +85,7 @@ public class MarshmallowMonster
 	}
 	public String toString()
 	{
-		String monsterInfo = "My monster has " + monsterLegs + " legs and it's name is " + monsterName + ". It has " + monsterEyes + " eyes, the answer of wether or not he has a belly button is " + monsterBellyButton + ",  ";
+		String monsterInfo = "My monster has " + monsterLegs + " legs and it's name is " + monsterName + ". It has " + monsterEyes + " eyes, the answer of wether or not he has a belly button is " + monsterBellyButton + ", he has " + monsterNoses + " noses and has" + monsterHair + " strands of hair.";
 		
 		return monsterInfo;
 	}
