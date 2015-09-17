@@ -28,7 +28,7 @@ public class MonsterController
 	public void start()
 	{
 		myDisplay.displayInfo(tobinMonster.toString());
-		askQuestions();
+		createUserMonster();
 		myDisplay.displayInfo("User monster info: " + userMonster.toString());
 	}
 
