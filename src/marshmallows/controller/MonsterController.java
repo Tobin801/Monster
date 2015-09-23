@@ -28,7 +28,7 @@ public class MonsterController
 	public void start()
 	{
 		myDisplay.displayInfo(tobinMonster.toString());
-		createUserMonster();
+		this.createUserMonster();
 		myDisplay.displayInfo("User monster info: " + userMonster.toString());
 	}
 
@@ -62,7 +62,7 @@ public class MonsterController
 		System.out.println("How many legs will it have? This is a decimal value because java sucks. :/");
 		double userLegs = monsterScanner.nextDouble();
 		System.out.println("How many strands of hair should it have? Another decimal value.");
-		double userHair;
+		double userHair = monsterScanner.nextDouble();
 		userHair = monsterScanner.nextDouble();
 		System.out.println("Does it have a bellybutton (true or false)?");
 		boolean userBellyButton = monsterScanner.nextBoolean();
