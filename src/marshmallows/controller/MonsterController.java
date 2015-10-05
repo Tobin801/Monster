@@ -2,6 +2,7 @@ package marshmallows.controller;
 
 import marshmallows.model.MarshmallowMonster;
 import marshmallows.view.MonsterDisplay;
+import marshmallows.view.MonsterPopupDisplay;
 import java.util.Scanner;
 
 public class MonsterController 
@@ -9,6 +10,7 @@ public class MonsterController
 	private MarshmallowMonster tobinMonster; //Declares a Monster called tobinMonster.
 	private MarshmallowMonster userMonster;
 	private MonsterDisplay myDisplay;
+	private MonsterPopupDisplay myPopups;
 	private Scanner monsterScanner;
 	
 	public MonsterController()
@@ -22,6 +24,7 @@ public class MonsterController
 		
 		monsterScanner = new Scanner(System.in);
 		myDisplay = new MonsterDisplay();
+		myPopups = new MonsterPopupDisplay();
 		tobinMonster = new MarshmallowMonster(name, eyes, noses, hasBellyButton, legs, hair);
 	}
 	
@@ -63,7 +66,6 @@ public class MonsterController
 		double userLegs = monsterScanner.nextDouble();
 		System.out.println("How many strands of hair should it have? Another decimal value.");
 		double userHair = monsterScanner.nextDouble();
-		userHair = monsterScanner.nextDouble();
 		System.out.println("Does it have a bellybutton (true or false)?");
 		boolean userBellyButton = monsterScanner.nextBoolean();
 		System.out.println("How many eyes will it have?");
@@ -74,4 +76,46 @@ public class MonsterController
 		//Step two: Build the monster using the constructor.
 		userMonster = new MarshmallowMonster(userName, userEyes, userNoses, userBellyButton, userHair, userLegs);
 	}
+	
+	private void makeMonsterFromGui()
+	{
+		
+			String name = myPopups.getAnswer("Type in the monster's name");
+			
+			myPopups.displayResponse("You typed in " + name);
+			
+			int eyes;
+			String tempEyes = myPopups.getAnswer("How many eyes does it have?");
+			if (isInteger(tempEyes))
+			{
+				eyes = Integer.parseInt(tempEyes);
+			}
+			else
+			{
+				eyes = 1;
+			}
+			myPopups.displayResponse("It will have " + eyes + "eyes.");
+			
+			int noses;
+			String tempNoses = myPopups.getAnswer("How many noses should it have?");
+			if (isInteger(tempNoses))
+			{
+				noses = Integer.parseInt(tempNoses);
+			}
+			
+		
+	}
+	
+	private boolean isInteger(String input)
+	{
+		boolean isInt = false;
+		
+		try
+		{
+			int validInteger = Integer.parseInt(input);
+			isInt = true;
+		}
+	}
+	
+	
 }
