@@ -115,11 +115,11 @@ public class MonsterController
 			int validInteger = Integer.parseInt(input);
 			isInt = true;
 		}
-		catch (NumberFormatExcception error)
+		catch (NumberFormatException error)
 		{
-			myPopups.displayResponse("You typed in an invalid integer, bllame Tobin");
+			myPopups.displayResponse("You typed in an invalid integer, blame Tobin");
 		}
-		return isDouble;
+		return isInt;
 	}
 	
 	
